@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Game Ular Tangga Edukasi</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div id="menu">
+    <h1>🎲 Game Ular Tangga Edukasi</h1>
+    <label for="player-count">Pilih Jumlah Pemain (1-4): </label>
+    <select id="player-count">
+      <option value="1">1</option>
+      <option value="2" selected>2</option>
+      <option value="3">3</option>
+      <option value="4">4</option>
+    </select>
+    <button id="start-btn">Mulai</button>
+  </div>
+
+  <div id="game" class="hidden">
+    <h2>🎯 Permainan Dimulai!</h2>
+    <div id="info-area">
+      <div id="turn-info">Giliran Pemain 1</div>
+      <div id="scores"></div>
+    </div>
+
+    <div id="board"></div>
+
+    <div id="dice-area">
+      <button id="roll-btn">🎲 Lempar Dadu</button>
+      <span id="dice-result">-</span>
+    </div>
+
+    <div id="question-box" class="hidden">
+      <div id="question-text"></div>
+      <div id="choices"></div>
+    </div>
+
+    <div id="winner" class="hidden"></div>
+
+    <div id="actions">
+      <button id="reset-btn">🔄 Reset</button>
+      <button id="exit-btn">❌ Exit</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
+

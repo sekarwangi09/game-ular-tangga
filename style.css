@@ -1,0 +1,170 @@
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #4b6cb7, #182848);
+  color: #eee;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+  padding: 20px;
+}
+
+#board {
+  width: 480px;
+  height: 300px;
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  grid-template-rows: repeat(5, 1fr);
+  gap: 3px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.6);
+  position: relative;
+}
+
+.cell {
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 6px;
+  position: relative;
+  user-select: none;
+  font-size: 14px;
+  color: #ddd;
+  padding: 3px 5px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+.number {
+  font-weight: 600;
+  color: #bbb;
+  font-size: 12px;
+}
+
+.ladder-icon, .snake-icon {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  font-size: 18px;
+  user-select: none;
+}
+
+.snake-icon {
+  color: #ff6666;
+}
+
+.ladder-icon {
+  color: #66ff66;
+}
+
+/* Token pemain */
+.token {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  position: absolute;
+  bottom: 8px;
+  border: 2px solid #fff;
+  box-shadow: 0 0 6px rgba(0,0,0,0.5);
+  transition: bottom 0.4s ease, right 0.4s ease;
+  z-index: 10;
+}
+
+/* Warna token per pemain */
+.player-0 { background-color: #f44336; } /* Merah */
+.player-1 { background-color: #2196f3; } /* Biru */
+.player-2 { background-color: #ffeb3b; border-color: #999; } /* Kuning */
+.player-3 { background-color: #4caf50; } /* Hijau */
+
+/* Box soal */
+#question-box {
+  background: rgba(0,0,0,0.7);
+  border-radius: 10px;
+  padding: 15px;
+  width: 460px;
+  margin-top: 20px;
+  box-shadow: 0 0 10px #222;
+  color: #eee;
+}
+
+.choice-btn {
+  background: #555;
+  border: none;
+  border-radius: 5px;
+  margin: 5px 10px 5px 0;
+  padding: 8px 15px;
+  color: #eee;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background 0.3s;
+}
+
+.choice-btn:hover {
+  background: #777;
+}
+
+.choice-btn.correct {
+  background: #4caf50 !important;
+  color: #fff;
+}
+
+.choice-btn.wrong {
+  background: #f44336 !important;
+  color: #fff;
+}
+
+button:disabled {
+  cursor: default;
+  opacity: 0.6;
+}
+
+/* Info giliran & skor */
+#turn-info, #scores, #winner {
+  margin-top: 15px;
+  font-weight: 700;
+  font-size: 18px;
+  text-align: center;
+}
+
+/* Container main game */
+#game {
+  width: 520px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Container menu */
+#menu {
+  background: rgba(0,0,0,0.6);
+  padding: 20px;
+  border-radius: 10px;
+  color: #eee;
+  width: 320px;
+  text-align: center;
+  box-shadow: 0 0 12px #222;
+}
+
+button {
+  background: #2196f3;
+  border: none;
+  border-radius: 6px;
+  color: white;
+  font-weight: 600;
+  padding: 10px 20px;
+  cursor: pointer;
+  margin: 10px 5px 0 5px;
+  transition: background 0.3s;
+}
+
+button:hover:not(:disabled) {
+  background: #1976d2;
+}
+
+button:disabled {
+  background: #555;
+  cursor: default;
+  opacity: 0.7;
+}
